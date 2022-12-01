@@ -1,21 +1,68 @@
-<!doctype html>
 <html>
-    <head>
-        <Title>Castle</Title>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    </head>
-<body>
-    <a-scene>
-        
-        <a-assets>
-        <img id="sky" src="clear-sunny-sky.jpg">
-        <a-asset-item id="village" src="castle_village_scene/scene.gltf"></a-asset-item>
-        </a-assets>
-    <a-entity camera position = "0 0 0" rotation="0 0 0">
-            <a-camera></a-camera>
+  <head>
+      <title>Playground</title>
+       <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
+      <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body>
+    <!--<a-scene physics="gravity:-1">
+      <a-entity look-controls wasd-controls camera position="0 2 0" ><a-cursor></a-cursor></a-entity>        
+      <a-box id="box" position="2 5 -3" rotation="-90 0 0"  color="#4CC3D9" dynamic-body></a-box>
+        <a-sphere id="ball" position="2 7 -4" rotation="-90 0 0"  color="#4CC3D9" dynamic-body></a-sphere>
+      <a-plane position="0 0 -4" rotation="-90 0 0" scale="15 15 15" static-body color="#7BC8A4"></a-plane>
+    </a-scene>-->
+      <a-scene
+               arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+              embedded
+              renderer="logarithmicDepthBuffer: true;"
+              vr-mode-ui="enabled: false"
+              gesture-detector
+              id="scene">
+          
+            <a-entity id="rig" position="1 0 5">
+            <a-entity id="camera" progressive-controls camera kinematic-body></a-entity>
             </a-entity>
-    <a-entity gltf-model="#village" position="0.05 1.55 -0.6"></a-entity>
-        
-    </a-scene>
-</body>
+          <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+          <a-plane position="0 0 0" rotation="-90 0 0" scale="150 150 150" static-body color="#7BC8A4"></a-plane>
+          
+          <a-box  grabbable color="red"
+                    width="2"
+                    height="0.3"
+                    depth="2"
+                    rotation="0 0 0"
+                    position="2 1 -5"
+                    dynamic-body></a-box>
+          <a-box  grabbable color="tomato"
+                    width="2"
+                    height="0.3"
+                    depth="2"
+                    rotation="0 0 0"
+                    position="1 1 -5"
+                    dynamic-body>
+          </a-box>
+          <a-sphere 
+                    grabbable
+                    gesture-handler="minScale: 0.25; maxScale: 10"
+                    color="green"
+                    width="1"
+                    height="1"
+                    depth="1"
+                    rotation="0 0 0"
+                    position="2 1 1"
+                    dynamic-body="
+                    linearDamping:0.5
+                    angularDamping:0.3"></a-sphere>
+           <a-box  color="black"
+                    width="15"
+                    height="2"
+                    depth="3"
+                    rotation="45 0 0"
+                    position="5 0 5"
+                    static-body></a-box>
+          </a-scene>
+  </body>
 </html>
