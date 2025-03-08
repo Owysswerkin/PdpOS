@@ -3,57 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Service</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .container {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 600px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            font-size: 1.1em;
-        }
-        .btn-chat {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-        .btn-chat:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Your Website</title>
+    <!-- Your other head content like meta tags, CSS links, etc. -->
+
+    <!-- Add the Aidbase Chatbot Script -->
+    <script>
+        AIDBASE_CHATBOT_ID = 'OY1M6_fgwotkv7q61I8aR';
+    </script>
     <script async type="text/javascript" src="https://client.aidbase.ai/chat.ab.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Our Service</h1>
-        <p>We're here to help you with any questions or assistance you might need. Click the button below to chat with us.</p>
-        <button class="btn-chat" onclick="document.querySelector('ab-chat').style.display = 'block';">Chat with Us</button>
-        <ab-chat chatbotID="OY1M6_fgwotkv7q61I8aR" style="display:none;"></ab-chat>
-    </div>
+    <h1>Welcome to My Website</h1>
+    <p>Click the button below to start chatting with our AI chatbot:</p>
+
+    <!-- You can optionally place a button or interaction trigger here -->
+    <button>Start Chat</button>
+
+    <!-- Optionally include the chatbot script in a custom location -->
+    <ab-chat chatbotID="OY1M6_fgwotkv7q61I8aR"></ab-chat>
 </body>
 </html>
