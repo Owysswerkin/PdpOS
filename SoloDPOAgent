@@ -1,4 +1,6 @@
-<script>
-  AIDBASE_CHATBOT_ID = 'OY1M6_fgwotkv7q61I8aR';
-</script>
+<html>
+<head>
 <script async type="text/javascript" src="https://client.aidbase.ai/chat.ab.js"></script>
+</head>
+<body>
+<ab-chat chatbotID="OY1M6_fgwotkv7q61I8aR"></ab-chat></body>
