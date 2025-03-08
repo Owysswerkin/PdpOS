@@ -1,6 +1,12 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script async type="text/javascript" src="https://client.aidbase.ai/chat.ab.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Integration</title>
+    <script async type="text/javascript" src="https://client.aidbase.ai/chat.ab.js"></script>
 </head>
 <body>
-<ab-chat chatbotID='OY1M6_fgwotkv7q61I8aR'></ab-chat></body>
+    <ab-chat chatbotID="OY1M6_fgwotkv7q61I8aR"></ab-chat>
+</body>
+</html>
