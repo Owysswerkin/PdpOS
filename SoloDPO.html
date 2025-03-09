@@ -4,91 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Chatbot Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       AIDBASE_CHATBOT_ID = "OY1M6_fgwotkv7q61I8aR";
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".accordion-header").forEach((button) => {
+          button.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            content.classList.toggle("hidden");
+          });
+        });
+      });
     </script>
     <script
       async
       type="text/javascript"
       src="https://client.aidbase.ai/chat.ab.js"
     ></script>
-    <style>
-      /* Reset styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
-
-      /* Full-screen two-column layout */
-      .container {
-        display: flex;
-        height: 100vh;
-        width: 100vw;
-      }
-
-      /* Left column - Hero Section */
-      .hero {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 4rem; /* Increased padding for better balance */
-        background-color: #f4f4f4;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-        color: #555;
-      }
-
-      /* Right column - Chatbot */
-      .chat-container {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: right;
-        padding: 6rem; /* Added equal padding for proper centering */
-        background-color: #fff000;
-      }
-
-      ab-chat {
-        width: 100%;
-        max-width: 800px;
-        height: 100%;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column;
-        }
-        .hero,
-        .chat-container {
-          padding: 2rem;
-          height: 10vh;
-        }
-      }
-    </style>
   </head>
-  <body>
-    <div class="container">
+  <body class="bg-yellow-300 text-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow p-4 flex justify-between items-center">
+      <div class="text-xl font-bold">PdpOS</div>
+      <div class="flex-1 flex justify-center">
+        <a
+          href="https://agent2307.github.io/PdpOS/SoloDPO.html"
+          class="text-gray-600"
+          >Speak to SoloDPO Agent</a
+        >
+      </div>
+    </nav>
+
+    <div class="container flex h-screen w-screen">
       <!-- Left Column: Hero Section -->
-      <div class="hero">
-        <h1>Welcome to Our AI Chatbot</h1>
-        <p>Get instant answers and assistance from our AI-powered chatbot.</p>
+      <div
+        class="flex-1 flex flex-col justify-center items-center p-16 bg-yellow-300 text-center"
+      >
+        <h1 class="text-4xl font-bold mb-4">Welcome to Our AI Chatbot</h1>
+        <p class="text-lg text-gray-600">
+          Get instant answers and assistance from our AI-powered chatbot.
+        </p>
       </div>
 
       <!-- Right Column: Chatbot -->
-      <div class="chat-container">
+      <div class="flex-1 flex justify-center items-center p-16 bg-yellow-300">
         <ab-chat
           chatbotID="OY1M6_fgwotkv7q61I8aR"
           initialMessagePopupDelay="0"
