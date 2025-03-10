@@ -22,32 +22,34 @@
       src="https://client.aidbase.ai/chat.ab.js"
     ></script>
   </head>
-  <body class="bg-yellow-300 text-gray-900">
+  <body class="bg-yellow-100 text-gray-900">
     <!-- Navigation Bar -->
     <nav class="bg-white shadow p-4 flex justify-between items-center">
       <div class="text-xl font-bold">PdpOS</div>
       <div class="flex-1 flex justify-center">
         <a
-          href="https://agent2307.github.io/PdpOS/SoloDPO.html"
-          class="text-gray-600"
-          >Speak to SoloDPO Agent</a
+          href="https://pdpos.app/"
+          class="text-black font-bold"
+          >Home</a
         >
       </div>
     </nav>
 
-    <div class="container flex h-screen w-screen">
+    <div class="container flex w-screen">
       <!-- Left Column: Hero Section -->
       <div
-        class="flex-1 flex flex-col justify-center items-center p-16 bg-yellow-300 text-center"
+        class="flex-1 flex flex-col justify-center items-center p-16 text-center"
       >
-        <h1 class="text-4xl font-bold mb-4">Welcome to Our AI Chatbot</h1>
+        <!-- Image above the title -->
+    <img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_525,c_limit/https%3A%2F%2Fres.cloudinary.com%2Fdylxm9fqw%2Fimage%2Fupload%2Fv1741093120%2Fpower_17589455_vsi7vi.png" alt="SoloDPO Ally" class="mb-4 w-32 h-32">
+        <h1 class="text-3xl font-bold mb-4">SoloDPO Ally is here to help</h1>
         <p class="text-lg text-gray-600">
-          Get instant answers and assistance from our AI-powered chatbot.
+          SoloDPO Ally is your AI-powered assistant designed to help you navigate PDPA compliance with ease. Think of it as your on-demand guide—ready to answer your questions, provide practical steps, and point you to useful templates and tools. 
         </p>
       </div>
 
       <!-- Right Column: Chatbot -->
-      <div class="flex-1 flex justify-center items-center p-16 bg-yellow-300">
+      <div class="flex-1 flex justify-center items-center p-16">
         <ab-chat
           chatbotID="OY1M6_fgwotkv7q61I8aR"
           initialMessagePopupDelay="0"
@@ -59,5 +61,26 @@
         ></ab-chat>
       </div>
     </div>
+    
+<footer class="bg-blue-600 py-5 text-white">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center px-5 space-y-4 md:space-y-0">
+        <!-- Left Column -->
+        <div class="bg-white px-4 py-2 rounded-lg flex items-center space-x-2 shadow-md">
+            <img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_500,c_limit/https%3A%2F%2Fres.cloudinary.com%2Fdylxm9fqw%2Fimage%2Fupload%2Fv1741093759%2FPicture1_ijwicl.png" 
+                 alt="Badge Icon" class="w-[40px] h-auto">
+            <span class="text-black font-bold text-sm">©2025 PdpOS by SoloDPO.
+              <br>All Rights Reserved.</span>
+        </div>
+        
+        <!-- Right Column (Aligned Properly) -->
+        <div class="md:text-right text-sm w-full md:w-auto">
+            <a href="#" class="text-white font-bold hover:underline mx-1">Privacy Policy</a> |
+            <a href="#" class="text-white font-bold hover:underline mx-1">Terms of Use</a>
+            <br>
+            <a href="https://www.linkedin.com" class="text-white font-bold hover:underline">Follow me on LinkedIn</a>
+        </div>
+    </div>
+</footer>
+
   </body>
 </html>
