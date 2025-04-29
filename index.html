@@ -28,7 +28,7 @@
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Be PDP-ready with SoloDPO's PdpOS. Essential resources for Data Protection Officers (DPOs) managing compliance effortlessly."
+      content="Be PDPA ready in Singapore with SoloDPO's PdpOS. Essential resources for Data Protection Officers (DPOs) managing compliance effortlessly."
     />
     <meta
       name="keywords"
@@ -41,17 +41,61 @@
     />
     <meta
       property="og:description"
-      content="Kickstart your journey as a Data Protection Officer in Singapore with PdpOS. Learn PDPA compliance step by step."
+      content="Kickstart your journey as a Data Protection Officer in Singapore with PdpOS."
     />
     <meta
       property="og:image"
       content="https://res.cloudinary.com/dylxm9fqw/image/upload/v1741093012/shield_17589451_x9hd3a.png"
     />
-    <meta property="og:url" content="https://pdpos.app/" />
+    <meta property="og:url" content="https://yourwebsite.com" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Custom styles for checkbox */
+      input[type="checkbox"] {
+        appearance: none;
+        width: 28px; /* Increased size */
+        height: 28px; /* Increased size */
+        border-radius: 50%;
+        border: 3px solid #4caf50;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+      }
+
+      input[type="checkbox"]:checked {
+        background-color: #4caf50;
+        border: 3px solid #4caf50;
+      }
+
+      /* Smooth opening animation */
+      .modal {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .modal.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Rounded progress bar */
+      .progress-bar {
+        border-radius: 9999px;
+        transition: width 0.3s ease-in-out;
+      }
+    </style>
+    <script>
+      AIDBASE_CHATBOT_ID = "OY1M6_fgwotkv7q61I8aR";
+    </script>
+    <script
+      async
+      type="text/javascript"
+      src="https://client.aidbase.ai/chat.ab.js"
+    ></script>
 
     <!-- Accordion Script (with Arrow Rotation) -->
     <script>
@@ -73,15 +117,142 @@
   </head>
   <body class="bg-gray-100 text-gray-900">
     <!-- Navigation Bar -->
-    <nav class="bg-white shadow p-4 flex justify-between items-center">
+    <nav
+      class="bg-white text-black px-6 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50"
+    >
       <div class="text-xl font-bold">PdpOS</div>
-      <div class="font-bold flex-1 flex justify-center">
-        <a href="https://pdpos.app/SoloDPO.html" class="text-gray-600"
-          >Ask Ally</a
-        >
-      </div>
+      
+      <!-- Compliance Button inside navbar -->
+      <button
+        id="openModal"
+        class="bg-blue-600 text-white px-4 py-2 rounded-full flex items-center shadow-lg text-lg font-semibold"
+      >
+        <span id="progressText" class="mr-2">0%</span> Readiness Checklist
+      </button>
     </nav>
+    <!-- Compliance Modal -->
+    <div
+      id="modal"
+      class="modal absolute top-35 right-6 bg-white shadow-lg rounded-lg w-96 p-5 border border-gray-300 hidden"
+    >
+      <div class="flex justify-between items-center">
+        <h2 class="text-blue-600 font-bold text-xl">Resource Center</h2>
+        <!-- Minimize Button -->
+        <button
+          id="closeModal"
+          class="absolute top-8 right-4 text-gray-500 hover:text-gray-800"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            viewbox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M17.94 17.94A10.94 10.94 0 0112 20c-5 0-9.27-3.11-11-7.5 1.15-2.71 3.08-5.01 5.47-6.61M9.9 4.24A10.9 10.9 0 0112 4c5 0 9.27 3.11 11 7.5a12.3 12.3 0 01-1.82 2.82M3 3l18 18"
+            />
+          </svg>
+        </button>
+      </div>
 
+      <!-- Compliance Checklist Header -->
+      <p class="text-lg font-semibold text-green-600 mt-2">
+        ✅ Compliance checklist
+      </p>
+
+      <!-- Description -->
+      <p class="text-base text-gray-600 mt-1">
+        Get started with the basics required for you to be data protection ready.
+      </p>
+
+      <!-- Progress Bar -->
+      <div class="bg-gray-200 w-full h-4 rounded-full mt-3">
+        <div id="progressBar" class="progress-bar bg-blue-600 h-4 w-0"></div>
+      </div>
+
+      <!-- Checklist -->
+      <ul id="checklist" class="mt-5 space-y-5">
+        <li class="flex items-center space-x-4">
+          <input type="checkbox" class="task" />
+          <span class="text-xl">Download the start guide</span>
+        </li>
+        <li class="flex items-center space-x-4">
+          <input type="checkbox" class="task" />
+          <span class="text-xl">Set Up Data Protection Policy</span>
+        </li>
+        <li class="flex items-center space-x-4">
+          <input type="checkbox" class="task" />
+          <span class="text-xl">Sign up 13 weeks Readiness Series</span>
+        </li>
+        <li class="flex items-center space-x-4">
+          <input type="checkbox" class="task" />
+          <span class="text-xl">Map Your IT and Data Assets</span>
+        </li>
+        <li class="flex items-center space-x-4">
+          <input type="checkbox" class="task" />
+          <span class="text-xl">Join the Co-hort when ready</span>
+        </li>
+        <li class="flex items-center space-x-4">
+          <input type="checkbox" class="task" />
+          <span class="text-xl">Leave a review</span>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      const modal = document.getElementById("modal");
+      const openModalBtn = document.getElementById("openModal");
+      const closeModalBtn = document.getElementById("closeModal");
+      const checkboxes = document.querySelectorAll(".task");
+      const progressBar = document.getElementById("progressBar");
+      const progressText = document.getElementById("progressText");
+
+      // Toggle modal visibility
+      openModalBtn.addEventListener("click", () => {
+        modal.classList.toggle("hidden");
+        modal.classList.toggle("show");
+      });
+
+      closeModalBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        modal.classList.remove("show");
+      });
+
+      // Update progress dynamically
+      function updateProgress() {
+        const totalTasks = checkboxes.length;
+        const completedTasks = [...checkboxes].filter(
+          (checkbox) => checkbox.checked
+        ).length;
+        const percentage = Math.round((completedTasks / totalTasks) * 100);
+
+        // Update progress bar and text
+        progressBar.style.width = percentage + "%";
+        progressText.textContent = percentage + "%";
+
+        // Strike-through completed tasks
+        checkboxes.forEach((checkbox) => {
+          checkbox.nextElementSibling.style.textDecoration = checkbox.checked
+            ? "line-through"
+            : "none";
+          checkbox.nextElementSibling.style.color = checkbox.checked
+            ? "gray"
+            : "black";
+        });
+      }
+
+      // Attach event listener to checkboxes
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", updateProgress);
+      });
+
+      // Initialize progress on page load
+      updateProgress();
+    </script>
     <div class="container mx-auto p-6">
       <!-- Hero Section -->
       <section
@@ -106,7 +277,7 @@
             responsibilities.
           </p>
           <a
-            href="https://dripl.ink/7YQdu"
+            href="/downloads/solodpo-starter-guide.pdf"
             class="mt-6 inline-block bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition"
             download
           >
@@ -122,31 +293,30 @@
         </p>
       </section>
 
-     <section
-  class="text-gray-700 p-4 text-center rounded-lg mt-6 mb-8 relative"
->
-  <!-- Image Wrapper -->
-  <div class="mx-auto w-2/3">
-    <img
-      src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_850,c_limit/https%3A%2F%2Fres.cloudinary.com%2Fdylxm9fqw%2Fimage%2Fupload%2Fv1741184284%2Fpdpos_guie_itru27.png"
-      alt="Guide Image"
-      class="w-full rounded-lg"
-      style="
-        mask-image: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 1) 10%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        -webkit-mask-image: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 1) 10%,
-          rgba(0, 0, 0, 0) 100%
-        );
-      "
-    />
-  </div>
-</section>
-
+      <section
+        class="text-gray-700 p-4 text-center rounded-lg mt-6 mb-8 relative"
+      >
+        <!-- Image Wrapper -->
+        <div class="mx-auto w-2/3">
+          <img
+            src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_850,c_limit/https%3A%2F%2Fres.cloudinary.com%2Fdylxm9fqw%2Fimage%2Fupload%2Fv1741184284%2Fpdpos_guie_itru27.png"
+            alt="Guide Image"
+            class="w-full rounded-lg"
+            style="
+              mask-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 1) 10%,
+                rgba(0, 0, 0, 0) 100%
+              );
+              -webkit-mask-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 1) 10%,
+                rgba(0, 0, 0, 0) 100%
+              );
+            "
+          />
+        </div>
+      </section>
 
       <section class="text-gray-700 p-4 text-center rounded-lg mt-6 mb-6">
         <h3 class="text-xl font-bold">The Guide I Wish I Had</h3>
@@ -229,7 +399,7 @@
                 class="w-5 h-5 transition-transform transform rotate-0"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                viewbox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -258,7 +428,7 @@
                 class="w-5 h-5 transition-transform transform rotate-0"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                viewbox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -285,7 +455,7 @@
                 class="w-5 h-5 transition-transform transform rotate-0"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                viewbox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -313,7 +483,7 @@
                 class="w-5 h-5 transition-transform transform rotate-0"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                viewbox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -341,7 +511,7 @@
                 class="w-5 h-5 transition-transform transform rotate-0"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                viewbox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -362,28 +532,38 @@
         </div>
       </section>
 
-<footer class="bg-blue-600 py-5 text-white">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center px-5 space-y-4 md:space-y-0">
-        <!-- Left Column -->
-        <div class="bg-white px-4 py-2 rounded-lg flex items-center space-x-2 shadow-md">
-            <img src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_500,c_limit/https%3A%2F%2Fres.cloudinary.com%2Fdylxm9fqw%2Fimage%2Fupload%2Fv1741093759%2FPicture1_ijwicl.png" 
-                 alt="Badge Icon" class="w-[40px] h-auto">
-            <span class="text-black font-bold text-sm">©2025 PdpOS by SoloDPO.
-              <br>All Rights Reserved.</span>
+      <footer class="bg-blue-600 py-5 text-white">
+        <div
+          class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center mx-5 space-y-4 md:space-y-0"
+        >
+          <!-- Left Column -->
+          <div
+            class="bg-white px-4 py-2 rounded-lg flex items-center space-x-2 shadow-md"
+          >
+            <img
+              src="https://res.cloudinary.com/glide/image/fetch/f_auto,w_500,c_limit/https%3A%2F%2Fres.cloudinary.com%2Fdylxm9fqw%2Fimage%2Fupload%2Fv1741093759%2FPicture1_ijwicl.png"
+              alt="Badge Icon"
+              class="w-[40px] h-auto"
+            />
+            <span class="text-black font-bold text-sm"
+              >©2025 PdpOS by SoloDPO. <br />All Rights Reserved.</span
+            >
+          </div>
+
+          <!-- Right Column (Responsive) -->
+          <div class="text-center md:text-right text-sm">
+            <a href="#" class="text-white font-bold hover:underline mx-2"
+              >Privacy Policy</a
+            >
+            <br />
+            <a
+              href="https://www.linkedin.com/in/trustinneo/"
+              class="text-white font-bold hover:underline"
+              >Follow me on LinkedIn</a
+            >
+          </div>
         </div>
-        
-        <!-- Right Column (Aligned Properly) -->
-        <div class="md:text-right text-sm w-full md:w-auto">
-            <a href="https://pdpos.app/privacy.html" class="text-white font-bold hover:underline mx-1">Privacy Notice</a>
-            <br>
-            <a href="https://www.linkedin.com/in/trustinneo/" class="text-white font-bold hover:underline">Follow me on LinkedIn</a>
-        </div>
-    </div>
-</footer>
-
-
-
-
+      </footer>
     </div>
   </body>
 </html>
